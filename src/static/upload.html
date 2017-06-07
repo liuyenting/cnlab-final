@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span class="mdl-layout-title">Student Photos Upload</span>
+                    <!-- Add spacer, to align navigation to the right -->
+                    <div class="mdl-layout-spacer"></div>
+                    <!-- Navigation. We hide it in small screens. -->
+                    <nav class="mdl-navigation mdl-layout--large-screen-only">
+                        <a class="mdl-navigation__link" href="">Log Out</a>
+                    </nav>
+                </div>
+            </header>
+            <!-- <div class="mdl-layout__drawer">
+                 <span class="mdl-layout-title">Title</span>
+                 <nav class="mdl-navigation">
+                 <a class="mdl-navigation__link" href="">Link</a>
+                 </nav>
+                 </div> -->
+            <main class="mdl-layout__content">
+                <div class="page-content">
+                    <div class="upload-card mdl-card mdl-shadow--2dp">
+                        <form>
+                            <div class="mdl-card__title mdl-card--expand">
+                                <h2 class="mdl-card__title-text">Photos Upload</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+                                    <input class="mdl-textfield__input"
+                                           placeholder="No file chosen" type="text" id="TEXT_ID" readonly/>
+                                    <div class="mdl-button mdl-button--icon mdl-button--file">
+                                        <i class="material-icons">attach_file</i>
+                                        <input type="file" name="fileToUpload" id="ID"
+                                               onchange="document.getElementById('TEXT_ID').value=this.files[0].name;" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border button-container">
+                                <input type="submit" value="Submit" id="submit"
+                                       class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+    <link rel="stylesheet" href="./bower_components/material-design-lite/material.min.css">
+    <script src="./bower_components/material-design-lite/material.min.js"></script>
+    <script src="./bower_components/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./css/upload.css">
+    <script src="js/attendance.js"></script> 
+</html>

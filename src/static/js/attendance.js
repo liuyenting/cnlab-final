@@ -1,5 +1,5 @@
 let Config = {
-    'attendanceUrl': './tmp.json'
+    'attendanceUrl': '/queryJSON.php'
 };
 
 let Attendance = {};
@@ -38,7 +38,7 @@ Attendance.view.update = function() {
 
 Attendance.getAttendanceTable = function(callback) {
     $.get(Config.attendanceUrl, function(data) {
-        Attendance.data = data;
+        Attendance.data = JSON.parse(data);
         callback();
     });          
 };
