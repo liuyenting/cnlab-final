@@ -44,7 +44,7 @@ class WebcamVideoStream:
             # push into the buffer
             self._buffer.push(frame)
 
-    def read(self, block=True):
+    def read(self, block=False):
         """
         Return the frame most recently read.
         """
@@ -60,3 +60,9 @@ class WebcamVideoStream:
         Indicate that the thread should be stopped.
         """
         self._stopped = True
+
+    def __exit__(self, type, value, traceback):
+        """
+        Release the camera resource.
+        """
+        self.stream.release()
