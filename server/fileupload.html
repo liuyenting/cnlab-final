@@ -1,14 +1,38 @@
-
 <!DOCTYPE html>
 <html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery UI Datepicker - Default functionality</title>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+	$( function() {
+		$( "#datepicker" ).datepicker();
+	} );
+	</script>
+</head>
+<title>Upload and Query page</title>
 <body>
-
+<!-- For teacher, enroll -->
 <form action="upload.php" method="post" enctype="multipart/form-data">
-	Student ID: <input type = "text" name = "student_id" /><br>
-	Select image to upload:
+	Select image(zip/jpg/jpeg/png) to upload:<br>
 	<input type="file" name="fileToUpload" id="fileToUpload">
-	<input type="submit" value="Upload Image" name="submit">
+	<input type="submit" value="Upload" name="submit">
 </form>
-
+<hr>
+<!-- Update Date/Week -->
+<form action="updateDate.php" method="post" enctype="multipart/form-data">
+	<p>Date of the first class: <input type="text" id="datepicker"></p>
+	<input type="submit" value="UpdateDate" name="submit">
+</form>
+<hr>
+<!-- For student, query -->
+<form action="querySQL.php" method="post" enctype="multipart/form-data">
+	Student ID: <input type = "text" name = "student_id" /><br>
+	<input type="submit" value="Search" name="submit">
+</form>
 </body>
 </html>
