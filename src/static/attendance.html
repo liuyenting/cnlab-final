@@ -28,7 +28,7 @@
                 <div class="page-content">
                     <div class="week-container">
                         <table class="mdl-data-table mdl-js-data-table 
-                                      mdl-shadow--2dp">
+                                      mdl-shadow--2dp" id="attendance-table">
                             <thead>
                                 <tr>
                                     <th class="mdl-data-table__cell--non-numeric">Student Id</th>
@@ -52,49 +52,7 @@
                                     <th>18</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="mdl-data-table__cell--non-numeric">b03902123</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                </tr>
-                                <tr>
-                                    <td class="mdl-data-table__cell--non-numeric">b03902124</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                    <td>v</td>
-                                </tr>
+                            <tbody id="attendance-table-body">
                             </tbody>
                         </table>
                     </div>
@@ -104,8 +62,10 @@
     </body>
     <link rel="stylesheet" href="./bower_components/material-design-lite/material.min.css">
     <script src="./bower_components/material-design-lite/material.min.js"></script>
+    <script src="./bower_components/jquery/dist/jquery.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./css/attendance.css">
+    <script src="js/attendance.js"></script> 
 </html>
 
 
