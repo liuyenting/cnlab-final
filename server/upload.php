@@ -109,14 +109,14 @@ function uploadToKairos($target_file, $student_id) {
 function updateSQL($student_id) {
 	$servername = "localhost";
 	$username = "root";
-	$password = "root";
+	$password = "plinderhaobunbuncnlab";
 	$dbname = "classroom";
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	}
-	$sql = "INSERT INTO roll_call_table (student_id, wk0, wk1, wk2)
-	VALUES (\"" . $student_id . "\", 0, 0, 0)"; //TODO update total week number
+	$sql = "INSERT INTO roll_call_table (student_id, wk0, wk1, wk2, wk3, wk4, wk5, wk6, wk7, wk8, wk9, wk10, wk11, wk12, wk13, wk14, wk15, wk16, wk17)
+	VALUES (\"" . $student_id . "\", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)"; //TODO update total week number
 	if ($conn->query($sql) === TRUE) {
 		echo "New record created successfully" . "<br>";
 	} else {

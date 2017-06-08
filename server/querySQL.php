@@ -5,7 +5,7 @@ table.db-table td	{ padding:5px; border-left:1px solid #ccc; border-top:1px soli
 </style>
 <?php
 $student_id = $_POST[student_id];
-$connection = mysql_connect('localhost','root','root');
+$connection = mysql_connect('localhost','root','plinderhaobunbuncnlab');
 mysql_select_db('classroom',$connection);
 $result = mysql_query('SHOW TABLES',$connection) or die('cannot show tables');
 while($tableName = mysql_fetch_row($result)) {
