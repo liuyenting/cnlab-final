@@ -1,7 +1,10 @@
+# upload.php  
+enroll to Kairos gallery **Demo**  
+  
 # Initialize SQL tables  
-create database classroom;  
-create TABLE week_date_table(Week VARCHAR(20), Date VARCHAR(20));  
-create table roll_call_table(student_id VARCHAR(20), wk0 INT, wk1 INT, wk2 INT, wk3 INT, wk4 INT, wk5 INT, wk6 INT, wk7 INT, wk8 INT, wk9 INT, wk10 INT, wk11 INT, wk12 INT, wk13 INT, wk14 INT, wk15 INT, wk16 INT, wk17 INT);  
+CREATE DATABASE classroom;  
+CREATE TABLE week_date_table(Week VARCHAR(20), Date VARCHAR(20));  
+CREATE TABLE roll_call_table(student_id VARCHAR(20), wk0 INT, wk1 INT, wk2 INT, wk3 INT, wk4 INT, wk5 INT, wk6 INT, wk7 INT, wk8 INT, wk9 INT, wk10 INT, wk11 INT, wk12 INT, wk13 INT, wk14 INT, wk15 INT, wk16 INT, wk17 INT);  
   
 # SQL settings  
 MariaDB [classroom]> show databases;  
