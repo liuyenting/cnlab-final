@@ -6,7 +6,7 @@ function login() {
            function(data) {
                res = JSON.parse(data);
                if (res['success'] == 1) {
-                   window.location = './upload.html';
+                   window.location = '/static/teacher/manage.html';
                } else {
                    $('password').val('');
                    $('#error').show('flex').css('display', 'flex')
