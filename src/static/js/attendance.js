@@ -8,6 +8,12 @@ Attendance.data = {};
 
 Attendance.view = {};
 
+
+Attendance.view.setTitle = function(){
+    $('#title').text('Attendence: ' + Attendance.class);
+};
+
+
 Attendance.view.makeRow = function(userId, attendance) {
     let tr = $('<tr></tr>');
     let tdSId = $('<td></td>').text(userId);
@@ -37,10 +43,12 @@ Attendance.view.update = function() {
 }
 
 Attendance.getAttendanceTable = function(callback) {
-    $.get(Config.attendanceUrl, function(data) {
-        Attendance.data = JSON.parse(data);
-        callback();
-    });          
+    $.get(Config.attendanceUrl,
+          {class: Attendance.class},
+          function(data) {
+              Attendance.data = JSON.parse(data);
+              callback();
+          });          
 };
 
 
@@ -51,13 +59,22 @@ Attendance.update = function(callback) {
     });
 };
 
+
 Attendance.init = function() {
+    let hash = window.location.hash.substr(1);
+    Attendance.class = decodeURI(hash);
+    Attendance.view.setTitle();
     update = function()  {
         Attendance.update(function() {
             setTimeout(update, 1000);
         });
     };
     Attendance.update(update);
+
+    window.onhashchange = function () {
+        location.reload();        
+    };
+
 }
 
 $(document).ready(function() {
