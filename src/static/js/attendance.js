@@ -19,7 +19,11 @@ Attendance.view.makeRow = function(userId, attendance) {
     let tdSId = $('<td></td>').text(userId);
     tr.append(tdSId);
     for (let week of attendance) {
-        tdAttend = $('<td></td>').text(week == 1 ? 'v' : '');
+        let tdAttend = $('<td></td>');
+        if (week == 1) {
+            let allDone = $('<img src="/static/imgs/done_all.svg">');
+            tdAttend.append(allDone);
+        }        
         tr.append(tdAttend);
     }
     return tr;

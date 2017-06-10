@@ -3,3 +3,12 @@
     margin-top: 10px;
 }
     
+
+td {
+    padding: 8px !important;
+    text-align: center !important;
+}
+
+td img {
+    width: 20px;
+}
