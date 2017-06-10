@@ -60,3 +60,10 @@ MariaDB [classroom]> describe week_date_table;
 | Date  | varchar(20) | YES  |     | NULL    |       |  
 +-------+-------------+------+-----+---------+-------+  
   
+MariaDB [classroom]> describe time_table;  
++--------+-------------+------+-----+---------+-------+  
+| Field  | Type        | Null | Key | Default | Extra |  
++--------+-------------+------+-----+---------+-------+  
+| Status | varchar(20) | YES  |     | NULL    |       |  
+| Time   | varchar(20) | YES  |     | NULL    |       |  
++--------+-------------+------+-----+---------+-------+  
