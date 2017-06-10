@@ -27,7 +27,6 @@ Attendance.view.makeRow = function(userId, attendance) {
 
 
 Attendance.view.makeTable = function(attendanceTable) {
-    console.log(attendanceTable);
     let tbody = $('<tbody></tbody>');
     for (let entry of attendanceTable) {
         let tr = Attendance.view.makeRow(entry['sid'], entry['attendance']);
@@ -36,7 +35,7 @@ Attendance.view.makeTable = function(attendanceTable) {
     return tbody;
 };
 
-Attendance.view.update = function() {
+Attendance.view.update = function() {    
     let tbody = Attendance.view.makeTable(Attendance.data);
     tbody.attr('id', 'attendance-table-body');
     $('#attendance-table-body').replaceWith(tbody);
@@ -53,8 +52,11 @@ Attendance.getAttendanceTable = function(callback) {
 
 
 Attendance.update = function(callback) {
+    let oldData = Attendance.data;
     Attendance.getAttendanceTable(function() {
-        Attendance.view.update();
+        if (JSON.stringify(oldData) !== JSON.stringify(Attendance.data)) {
+            Attendance.view.update();
+        }
         callback();
     });
 };
