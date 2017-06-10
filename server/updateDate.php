@@ -19,14 +19,13 @@ if ($conn->query($sql) === TRUE) {
 	echo "Error: " . $sql . "<br>" . $conn->error;
 }
 for($i=0;$i<18;$i++) {
-	
-	$sql = "INSERT INTO week_date_table (Week, Date) VALUES (\"wk" . $i . "\",\"".$date->format('Y-m-d')."\")"; //TODO update total week number
+	$sql = "INSERT INTO week_date_table (Week, Date) VALUES (\"wk" . $i . "\",\"" . $date->format('Y-m-d') . "\")";
 	$date->add(new DateInterval('P7D'));
 	if ($conn->query($sql) === TRUE) {
-	echo "New record created successfully" . "<br>";
-} else {
-	echo "Error: " . $sql . "<br>" . $conn->error;
-}
+		echo "New record created successfully" . "<br>";
+	} else {
+		echo "Error: " . $sql . "<br>" . $conn->error;
+	}
 }
 $conn->close();
 ?>
