@@ -31,7 +31,7 @@
 	</form>
 </html>
 <?php
-if (isset($_POST['submit1'])) {
+if(isset($_POST['submit1'])) {
 	date_default_timezone_set('Asia/Taipei');
 	$time1 = date_create("1980-01-01");
 	$time2 = date_create("1980-01-01");
