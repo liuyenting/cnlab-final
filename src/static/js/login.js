@@ -8,7 +8,7 @@ function login() {
                if (res['success'] == 1) {
                    window.location = '/static/teacher/index.html';
                } else {
-                   $('password').val('');
+                   $('#password').val('');
                    $('#error').show('flex').css('display', 'flex')
                }
            });
