@@ -18,8 +18,9 @@ Management.view.makeRow = function(userId, attendance) {
     let tr = $('<tr></tr>');
     let tdSId = $('<td></td>').text(userId);
     tr.append(tdSId);
-    for (let week of attendance) {
+    for (let i = 0; i < attendance.length; ++i) {
         let tdAttend = $('<td></td>');
+        week = attendance[i];
         if (week == 2) {
             let allDone = $('<img src="/static/imgs/done_all.svg">');
             tdAttend.append(allDone);
@@ -27,6 +28,17 @@ Management.view.makeRow = function(userId, attendance) {
             let done = $('<img src="/static/imgs/done.svg">');
             tdAttend.append(done);
         }            
+
+        function makeToggleFunction(weekNum, sid, td) {
+            return (function() {
+                $.post('/toggleSQL.php',
+                       {'student_id': sid,
+                        'week': weekNum });
+            });
+        };
+
+        tdAttend.click(makeToggleFunction(i + 1, userId, tdAttend));
+
         tr.append(tdAttend);
     }
     return tr;
