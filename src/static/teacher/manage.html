@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
+        <script src="/static/bower_components/jquery/dist/jquery.js"></script>
+        <script src="/static/js/check-login.js"></script>
         <link rel="stylesheet" href="/static//bower_components/material-design-lite/material.min.css">
         <script src="/static/bower_components/material-design-lite/material.min.js"></script>
     </head>
@@ -39,7 +41,7 @@
             </div>            
             <main class="mdl-layout__content">
                 <div class="page-content">
-                    <div class="week-container">
+                    <div class="week-container table-responsive">
                         <table class="mdl-data-table mdl-js-data-table 
                                       mdl-shadow--2dp" id="attendance-table">
                             <thead>
@@ -68,7 +70,7 @@
                             <tbody id="attendance-table-body">
                             </tbody>
                             <tfoot>
-                                <tf><td colspan="19"><a href="#">Download as CSV</a></td></tf>
+                                <tf><td colspan="19"><a href="http://172.16.217.90/saveCSV.php">Download as CSV</a></td></tf>
                             </tfoot>
                         </table>
                     </div>
@@ -98,7 +100,6 @@
             </main>
         </div>
     </body>
-    <script src="/static/bower_components/jquery/dist/jquery.js"></script>
     <script src="/static/js/manage.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/static/css/manage.css">
