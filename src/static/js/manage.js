@@ -31,9 +31,12 @@ Management.view.makeRow = function(userId, attendance) {
 
         function makeToggleFunction(weekNum, sid, td) {
             return (function() {
+                let spinner = $('<div class="mdl-spinner mdl-js-spinner is-active"></div>');
+                td.empty().append(spinner);
+                componentHandler.upgradeElement(spinner[0]);
                 $.post('/toggleSQL.php',
                        {'student_id': sid,
-                        'week': weekNum });
+                        'week': weekNum });                
             });
         };
 
