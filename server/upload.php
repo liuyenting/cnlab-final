@@ -53,6 +53,10 @@ if($fileType == "jpg" || $fileType == "png" || $fileType == "jpeg") {
 	updateSQL($id);
 }
 else if($fileType == "zip") {
+	if(get_zip_originalsize($_FILES["fileToUpload"]["tmp_name"]) > 50000000) { // ~50MB
+		echo "Actual size is too large (limit = 50MB).";
+		exit();
+	}
 	$zip = new ZipArchive;
 	if ($zip->open($_FILES["fileToUpload"]["tmp_name"]) === TRUE) {
 		$zip->extractTo($unzip_tmp_dir);
@@ -126,5 +130,14 @@ function updateSQL($student_id) {
 function update_progress($percent) {
 	echo "<div class='per'>{$percent}%</div>\n";
 	echo "<div class='bar' style='width: ",$percent * 3, "px'></div>\n";
+}
+function get_zip_originalsize($filename) {
+	$size = 0;
+	$resource = zip_open($filename);
+	while($dir_resource = zip_read($resource)) {
+		$size += zip_entry_filesize($dir_resource);
+	}
+	zip_close($resource);
+	return $size;
 }
 ?>
