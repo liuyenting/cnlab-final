@@ -107,22 +107,21 @@ function uploadToKairos($target_file, $student_id) {
 	curl_close($ch);
 }
 function updateSQL($student_id) {
-	$servername = "localhost";
-	$username = "root";
-	$password = "plinderhaobunbuncnlab";
-	$dbname = "classroom";
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
+	$connection = mysql_connect('localhost','root','plinderhaobunbuncnlab');
+	mysql_select_db('classroom',$connection);
+	$result1 = mysql_query("SELECT student_id FROM roll_call_table WHERE student_id=\"" . $student_id . "\"");
+	if(mysql_num_rows($result1) == 0) {
+		$result = mysql_query("INSERT INTO roll_call_table (student_id, wk0, wk1, wk2, wk3, wk4, wk5, wk6, wk7, wk8, wk9, wk10, wk11, wk12, wk13, wk14, wk15, wk16, wk17) VALUES (\"" . $student_id . "\", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)");
+		if($result) {
+			echo "New record created successfully" . "<br>";
+		} else {
+			echo "Fail" . "<br>";
+		}
 	}
-	$sql = "INSERT INTO roll_call_table (student_id, wk0, wk1, wk2, wk3, wk4, wk5, wk6, wk7, wk8, wk9, wk10, wk11, wk12, wk13, wk14, wk15, wk16, wk17)
-	VALUES (\"" . $student_id . "\", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)"; //TODO update total week number
-	if ($conn->query($sql) === TRUE) {
-		echo "New record created successfully" . "<br>";
-	} else {
-		echo "Error: " . $sql . "<br>" . $conn->error;
+	else {
+		echo "student_id " . $student_id . " is already exists.<br>";
 	}
-	$conn->close();
+	mysql_close();
 }
 function update_progress($percent) {
 	echo "<div class='per'>{$percent}%</div>\n";
