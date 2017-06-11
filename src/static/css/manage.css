@@ -1,0 +1,90 @@
+.mdl-button--file input {
+    cursor: pointer;
+    height: 100%;
+    right: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 300px;
+    z-index: 4;
+}
+.mdl-textfield--file .mdl-textfield__input {
+    box-sizing: border-box;
+    width: calc(100% - 32px);
+}
+.mdl-textfield--file .mdl-button--file {
+    right: 0;
+}
+
+
+body {
+    width: 100%;
+    height: 100%;
+}    
+
+/* .page-content {    */
+/*     width: 100%; */
+/*     height: 100%; */
+/*     display: flex; */
+/*     flex-direction: column; */
+/*     justify-content: center; */
+/* } */
+
+.upload-card {
+    margin: auto;
+    margin-top: 20px;
+    width: 80%;
+}
+
+.button-container {
+    text-align: right;
+}
+
+
+.mdl-data-table {
+    width: 80%;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+td {
+    padding: 8px !important;
+    text-align: center !important;
+}
+
+td img {
+    width: 20px;
+}
+
+tfoot td { 
+    text-align: right !important;   
+}
+
+.mdl-spinner {
+    width: 20px;
+    height: 20px;
+}
+
+.week-container table {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .upload-card {
+        width:100%;
+    }
+}

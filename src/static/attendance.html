@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span class="mdl-layout-title" id="title">Attendance</span>
+                    <!-- Add spacer, to align navigation to the right -->
+                    <div class="mdl-layout-spacer"></div>
+                    <!-- Navigation. We hide it in small screens. -->
+                    <nav class="mdl-navigation mdl-layout--large-screen-only">
+                        <a class="mdl-navigation__link" href="index.html">
+                            <i class="material-icons">
+                                home
+                            </i>
+                        </a>
+                    </nav>
+                </div>
+            </header>
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Classes</span>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="/static/attendance.html#Calculus">Calculus</a>
+                    <a class="mdl-navigation__link" href="/static/attendance.html#C Programming">C Programming</a>
+                    <a class="mdl-navigation__link" href="/static/attendance.html#Computer Network Lab">Computer Network Lab</a>
+                </nav>
+            </div>
+            <main class="mdl-layout__content">
+                <div class="page-content">
+                    <div class="week-container">
+                        <div class="table-wrapper table-responsive">
+                            <table class="mdl-data-table mdl-js-data-table 
+                                          mdl-shadow--2dp " id="attendance-table">
+                                <thead>
+                                    <tr>
+                                        <th class="mdl-data-table__cell--non-numeric">Student Id</th>
+                                        <th>1</th>
+                                        <th>2</th>
+                                        <th>3</th>
+                                        <th>4</th>
+                                        <th>5</th>
+                                        <th>6</th>
+                                        <th>7</th>
+                                        <th>8</th>
+                                        <th>9</th>
+                                        <th>10</th>
+                                        <th>11</th>
+                                        <th>12</th>
+                                        <th>13</th>
+                                        <th>14</th>
+                                        <th>15</th>
+                                        <th>16</th>
+                                        <th>17</th>
+                                        <th>18</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="attendance-table-body">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+    <link rel="stylesheet" href="./bower_components/material-design-lite/material.min.css">
+    <script src="./bower_components/material-design-lite/material.min.js"></script>
+    <script src="./bower_components/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./css/attendance.css">
+    <script src="js/attendance.js"></script> 
+</html>
+
+
+

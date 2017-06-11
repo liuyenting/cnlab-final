@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="./bower_components/material-design-lite/material.min.css">
+        <script src="./bower_components/material-design-lite/material.min.js"></script>
+    </head>
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span class="mdl-layout-title">Attendance</span>
+                    <!-- Add spacer, to align navigation to the right -->
+                    <div class="mdl-layout-spacer"></div>
+                    <!-- Navigation. We hide it in small screens. -->
+                    <nav class="mdl-navigation mdl-layout--large-screen-only">
+                        <a class="mdl-navigation__link" href="index.html">
+                            <i class="material-icons">
+                                home
+                            </i>
+                        </a>
+                    </nav>
+                </div>
+            </header>
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Classes</span>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="/static/attendance.html#Calculus">Calculus</a>
+                    <a class="mdl-navigation__link" href="/static/attendance.html#C Programming">C Programming</a>
+                    <a class="mdl-navigation__link" href="/static/attendance.html#Computer Network Lab">Computer Network Lab</a>
+                </nav>
+            </div>
+            <main class="mdl-layout__content">
+                <div class="page-content">
+                    <div class="main-card mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title mdl-card--expand">
+                            <h2 class="mdl-card__title-text">Your Classes</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <ul class="demo-list-icon mdl-list">
+                                <li class="mdl-list__item">
+                                    <a href="/static/attendance.html#Calculus">
+                                        <span class="mdl-list__item-primary-content">
+                                            <i class="material-icons mdl-list__item-icon">class</i>
+                                            Calculus A-1
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="mdl-list__item">
+                                    <a href="/static/attendance.html#C Programming">
+                                        <span class="mdl-list__item-primary-content">
+                                            <i class="material-icons mdl-list__item-icon">class</i>
+                                            C Programming
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="mdl-list__item">
+                                    <a href="/static/attendance.html#Computer Network Lab">
+                                        <span class="mdl-list__item-primary-content">
+                                            <i class="material-icons mdl-list__item-icon">class</i>
+                                            Computer Network Lab
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+    <script src="./bower_components/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./css/index.css">
+</html>
+
+
+
