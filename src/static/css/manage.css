@@ -81,3 +81,10 @@ tfoot td {
   overflow-x: auto;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
+
+
+@media only screen and (max-width: 1000px) {
+    .upload-card {
+        width:100%;
+    }
+}
