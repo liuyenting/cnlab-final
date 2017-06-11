@@ -20,10 +20,13 @@ Management.view.makeRow = function(userId, attendance) {
     tr.append(tdSId);
     for (let week of attendance) {
         let tdAttend = $('<td></td>');
-        if (week == 1) {
+        if (week == 2) {
             let allDone = $('<img src="/static/imgs/done_all.svg">');
             tdAttend.append(allDone);
-        }        
+        } else if (week == 1) {
+            let done = $('<img src="/static/imgs/done.svg">');
+            tdAttend.append(done);
+        }            
         tr.append(tdAttend);
     }
     return tr;
