@@ -13,9 +13,9 @@ function islogin(){
 
 if (basename(__FILE__) === basename($_SERVER["SCRIPT_FILENAME"])){
 	if (islogin()){
-		echo '{"success": 1}';
+		echo '{"login": 1}';
 	}else{
-		echo '{"success": 0}';
+		echo '{"login": 0}';
 	}
 }else{
 	if (islogin()){
