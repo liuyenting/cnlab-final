@@ -9,7 +9,6 @@
 </html>
 <?php
 if(isset($_POST['content'])) {
-	echo $_POST['content'];
 	$connection = mysql_connect('localhost', 'root', 'plinderhaobunbuncnlab');
 	mysql_select_db('classroom', $connection);
 	$result2 = mysql_query('SELECT * FROM ' . $_POST['content']) or die ('fail');
