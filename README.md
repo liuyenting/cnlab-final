@@ -10,6 +10,7 @@ The entire project consists of three parts,
 - b02502055 張立
   - Service backend (primary).
 - b03504051 胡晉華
+  - Add an icon.
 - b03902036 劉彥廷
   - Camera, see the [submodule](https://github.com/liuyenting/kairos-rt-recog) for details.
 - b03902064 楊松道
