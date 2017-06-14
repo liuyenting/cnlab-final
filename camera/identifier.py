@@ -17,6 +17,7 @@ import base64
 import requests
 import json
 from datetime import datetime
+import os
 
 class FaceIdentifier:
     def __init__(self, path):
@@ -80,7 +81,9 @@ class NameIdentifier:
             'app_key': appKey
         }
 
-        self._buffer = RingBuffer(size=2)
+        self._buffer = RingBuffer(size=8)
+        # similarity threshold
+        self._threshold = 0.3
         # variable used to indicate if the thread should be stopped
         self._stopped = False
 
@@ -95,7 +98,29 @@ class NameIdentifier:
         """
         Query the student ID for specified face.
         """
-        self._buffer.push(face)
+        result, score = self._isSimilar(face)
+        if not result:
+            print('[DEBUG] new face (score = %.2f)' % (score))
+            self._buffer.push(face)
+
+    def _isSimilar(self, face):
+        """
+        Compare whether this face is similar to some face in the waiting queue.
+        """
+        histIn = cv2.calcHist([face], [0], None, [256], [0,256])
+        histIn = cv2.normalize(histIn).flatten()
+
+        dMax = 0
+        for faceWait in self._buffer.snapshot():
+            histWait = cv2.calcHist([faceWait], [0], None, [256], [0,256])
+            histWait = cv2.normalize(histWait).flatten()
+            # histogram difference using cross-correlation
+            d = cv2.compareHist(histWait, histIn, cv2.cv.CV_COMP_CORREL)
+            if d > self._threshold:
+                return True, d
+            if d > dMax:
+                dMax = d
+        return False, dMax
 
     def worker(self):
         """
@@ -111,10 +136,11 @@ class NameIdentifier:
                 if state == KairosResponse.SUCCESS:
                     # send to the signup sheet server
                     response = requests.post(
-                        'http://172.16.217.90/signup.php',
+                        'http://cnlab.csie.org/signup.php',
                         data={'student_id': sid}
                     )
                     sid = '[' + sid + ']'
+                    os.system('say "identified"')
                 elif state == KairosResponse.NO_FACE:
                     sid = '<no face>'
                 elif state == KairosResponse.UNKNOWN:
