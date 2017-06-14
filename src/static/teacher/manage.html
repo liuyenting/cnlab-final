@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="/static/bower_components/jquery/dist/jquery.js"></script>
+        <script src="/static/js/check-login.js"></script>
+        <link rel="stylesheet" href="/static//bower_components/material-design-lite/material.min.css">
+        <script src="/static/bower_components/material-design-lite/material.min.js"></script>
+    </head>
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span class="mdl-layout-title" id="title">Management</span>
+                    <!-- Add spacer, to align navigation to the right -->
+                    <div class="mdl-layout-spacer"></div>
+                    <!-- Navigation. We hide it in small screens. -->
+                    <nav class="mdl-navigation mdl-layout--large-screen-only">
+                        <a class="mdl-navigation__link" href="index.html">
+                            <i class="material-icons">
+                                home
+                            </i>
+                        </a>
+                        <a class="mdl-navigation__link" href="/logout.php">
+                            <i class="material-icons">
+                                exit_to_app
+                            </i>
+                        </a>
+                    </nav>
+                </div>
+            </header>
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Classes</span>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="#Calculus">Calculus</a>
+                    <a class="mdl-navigation__link" href="#C Programming">C Programming</a>
+                    <a class="mdl-navigation__link" href="#Computer Network Lab">Computer Network Lab</a>
+                </nav>
+            </div>            
+            <main class="mdl-layout__content">
+                <div class="page-content">
+                    <div class="week-container table-responsive">
+                        <table class="mdl-data-table mdl-js-data-table 
+                                      mdl-shadow--2dp" id="attendance-table">
+                            <thead>
+                                <tr>
+                                    <th class="mdl-data-table__cell--non-numeric">Student Id</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
+                                    <th>5</th>
+                                    <th>6</th>
+                                    <th>7</th>
+                                    <th>8</th>
+                                    <th>9</th>
+                                    <th>10</th>
+                                    <th>11</th>
+                                    <th>12</th>
+                                    <th>13</th>
+                                    <th>14</th>
+                                    <th>15</th>
+                                    <th>16</th>
+                                    <th>17</th>
+                                    <th>18</th>
+                                </tr>
+                            </thead>
+                            <tbody id="attendance-table-body">
+                            </tbody>
+                            <tfoot>
+                                <tf><td colspan="19"><a href="http://172.16.217.90/saveCSV.php">Download as CSV</a></td></tf>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="upload-card mdl-card mdl-shadow--2dp">
+                        <form>
+                            <div class="mdl-card__title mdl-card--expand">
+                                <h2 class="mdl-card__title-text">Photos Upload</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+                                    <input class="mdl-textfield__input"
+                                           placeholder="No file chosen" type="text" id="TEXT_ID" readonly/>
+                                    <div class="mdl-button mdl-button--icon mdl-button--file">
+                                        <i class="material-icons">attach_file</i>
+                                        <input type="file" name="fileToUpload" id="ID"
+                                               onchange="document.getElementById('TEXT_ID').value=this.files[0].name;" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border button-container">
+                                <input type="submit" value="Submit" id="submit"
+                                       class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+    <script src="/static/js/manage.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/static/css/manage.css">
+    <link rel="stylesheet" href="/static/css/attendance.css">
+</html>

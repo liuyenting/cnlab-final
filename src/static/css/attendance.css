@@ -1,0 +1,23 @@
+.week-container table {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+td {
+    padding: 8px !important;
+    text-align: center !important;
+}
+
+td img {
+    width: 20px;
+}
