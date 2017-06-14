@@ -15,5 +15,5 @@ The entire project consists of three parts,
 - b03902064 楊松道
   - Service backend.
   - Setup virtual machine to host the LAMP stack.
-- b03902072 江廷睿  
-  - Front end.
+- b03902072 江廷睿
+  - Front end.
