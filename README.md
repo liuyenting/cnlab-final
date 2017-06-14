@@ -7,3 +7,13 @@ The entire project consists of three parts,
 - **static** holds all the static pages for end-users (teachers/students).
 
 ## Contributors
+- b02502055 張立
+  - Service backend (primary).
+- b03504051 胡晉華
+- b03902036 劉彥廷
+  - Camera, see the [submodule](https://github.com/liuyenting/kairos-rt-recog) for details.
+- b03902064 楊松道
+  - Service backend.
+  - Setup virtual machine to host the LAMP stack.
+- b03902072 江廷睿
+  - Front end.
