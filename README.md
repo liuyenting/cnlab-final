@@ -1,5 +1,5 @@
 # CNLab-Final
-NTU CSIE [Computer Network Lab 2017](http://www.pcs.csie.ntu.edu.tw/course/cnl/2017/) final project.
+NTU CSIE [Computer Network Lab 2017](http://www.pcs.csie.ntu.edu.tw/course/cnl/2017/) (CSIE3511) final project.
 
 The entire project consists of three parts,
 - **camera** contains the real time facial recognition routines through Kairos free online APIs.
